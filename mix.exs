@@ -57,7 +57,11 @@ defmodule Hedgehog.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      {:binance, "~> 1.0"},
+      {:decimal, "~> 2.0"},
+      {:ecto_enum, "~> 1.4"},
+      {:websockex, "~> 0.4.2"}
     ]
   end
 

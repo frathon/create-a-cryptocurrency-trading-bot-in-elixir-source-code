@@ -8,8 +8,14 @@
 import Config
 
 config :hedgehog,
+  binance_client: Hedgehog.Exchange.BinanceMock,
   ecto_repos: [Hedgehog.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  exchanges: [
+    binance_mock: [
+      use_cached_exchange_info: true
+    ]
+  ]
 
 # Configures the endpoint
 config :hedgehog, HedgehogWeb.Endpoint,

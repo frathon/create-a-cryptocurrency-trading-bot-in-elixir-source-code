@@ -17,7 +17,9 @@ defmodule Hedgehog.Application do
       # Start a worker by calling: Hedgehog.Worker.start_link(arg)
       # {Hedgehog.Worker, arg},
       # Start to serve requests, typically the last entry
-      HedgehogWeb.Endpoint
+      HedgehogWeb.Endpoint,
+      Hedgehog.Exchange.BinanceMock,
+      Hedgehog.Streaming.Binance.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
