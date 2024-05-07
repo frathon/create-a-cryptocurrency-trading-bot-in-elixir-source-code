@@ -3,8 +3,8 @@ defmodule Hedgehog.Exchange.BinanceMock do
 
   alias Binance.Order
   alias Binance.OrderResponse
-  alias Hedgehog.Trading.TradeEvent
   alias Decimal, as: D
+  alias Hedgehog.Exchange.TradeEvent
 
   require Logger
 

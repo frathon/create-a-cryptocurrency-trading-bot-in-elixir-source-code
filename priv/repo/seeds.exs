@@ -1,7 +1,7 @@
 require Logger
 
 alias Hedgehog.Repo
-alias Hedgehog.Streaming.Settings
+alias Hedgehog.Streamer.Settings
 
 binance_client = Application.compile_env(:hedgehog, :binance_client)
 

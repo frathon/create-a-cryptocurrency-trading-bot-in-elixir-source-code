@@ -1,11 +1,11 @@
-defmodule Hedgehog.Streaming.Settings do
+defmodule Hedgehog.Streamer.Settings do
   use Ecto.Schema
 
-  alias Hedgehog.Streaming.SettingsStatusEnum
+  alias Hedgehog.Streamer.SettingsStatusEnum
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  schema "streaming_settings" do
+  schema "streamer_settings" do
     field(:symbol, :string)
     field(:status, SettingsStatusEnum)
 

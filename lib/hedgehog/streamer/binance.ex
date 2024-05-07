@@ -1,8 +1,8 @@
-defmodule Hedgehog.Streaming.Binance do
+defmodule Hedgehog.Streamer.Binance do
   @moduledoc """
   Documentation for `Streamer`.
   """
-  alias Hedgehog.Streaming.Binance.DynamicStreamerSupervisor
+  alias Hedgehog.Streamer.Binance.DynamicStreamerSupervisor
 
   def start_streaming(symbol) do
     symbol

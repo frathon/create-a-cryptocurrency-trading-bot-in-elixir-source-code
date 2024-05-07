@@ -1,4 +1,4 @@
-defmodule Hedgehog.Trading.TradeEvent do
+defmodule Hedgehog.Exchange.TradeEvent do
   defstruct [
     :event_type,
     :event_time,

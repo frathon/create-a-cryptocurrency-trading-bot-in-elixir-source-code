@@ -1,11 +1,11 @@
-defmodule Hedgehog.Streaming.Binance.DynamicStreamerSupervisor do
+defmodule Hedgehog.Streamer.Binance.DynamicStreamerSupervisor do
   use DynamicSupervisor
 
   require Logger
 
-  alias Hedgehog.Streaming.Binance.Worker
   alias Hedgehog.Repo
-  alias Hedgehog.Streaming.Settings
+  alias Hedgehog.Streamer.Binance.Worker
+  alias Hedgehog.Streamer.Settings
 
   import Ecto.Query, only: [from: 2]
 

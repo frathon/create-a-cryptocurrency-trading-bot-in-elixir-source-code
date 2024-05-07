@@ -1,4 +1,4 @@
-defmodule Hedgehog.Streaming.Binance.Worker do
+defmodule Hedgehog.Streamer.Binance.Worker do
   use WebSockex
 
   require Logger
@@ -29,7 +29,7 @@ defmodule Hedgehog.Streaming.Binance.Worker do
   end
 
   defp process_event(%{"e" => "trade"} = event) do
-    trade_event = %Hedgehog.Trading.TradeEvent{
+    trade_event = %Hedgehog.Exchange.TradeEvent{
       :event_type => event["e"],
       :event_time => event["E"],
       :symbol => event["s"],

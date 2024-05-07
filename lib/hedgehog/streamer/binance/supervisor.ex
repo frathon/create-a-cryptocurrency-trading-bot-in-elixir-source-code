@@ -1,7 +1,7 @@
-defmodule Hedgehog.Streaming.Binance.Supervisor do
+defmodule Hedgehog.Streamer.Binance.Supervisor do
   use Supervisor
 
-  alias Hedgehog.Streaming.Binance.DynamicStreamerSupervisor
+  alias Hedgehog.Streamer.Binance.DynamicStreamerSupervisor
 
   @registry :binance_streamers
 
