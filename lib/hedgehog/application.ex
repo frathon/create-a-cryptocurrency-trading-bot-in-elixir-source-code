@@ -19,7 +19,8 @@ defmodule Hedgehog.Application do
       # Start to serve requests, typically the last entry
       HedgehogWeb.Endpoint,
       Hedgehog.Exchange.BinanceMock,
-      Hedgehog.Streamer.Binance.Supervisor
+      Hedgehog.Streamer.Binance.Supervisor,
+      Hedgehog.Strategy.Naive.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

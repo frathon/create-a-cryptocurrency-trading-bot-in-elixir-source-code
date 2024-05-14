@@ -15,6 +15,17 @@ config :hedgehog,
     binance_mock: [
       use_cached_exchange_info: true
     ]
+  ],
+  strategy: [
+    naive: [
+      defaults: %{
+        chunks: 5,
+        budget: 1000,
+        buy_down_interval: "0.0001",
+        profit_interval: "-0.0012",
+        rebuy_interval: "0.001"
+      }
+    ]
   ]
 
 # Configures the endpoint

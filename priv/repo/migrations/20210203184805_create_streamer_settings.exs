@@ -1,4 +1,4 @@
-defmodule Hedgehog.Repo.Migrations.CreateStreamingSettings do
+defmodule Hedgehog.Repo.Migrations.CreateStreamerSettings do
   use Ecto.Migration
 
   alias Hedgehog.Streamer.SettingsStatusEnum
