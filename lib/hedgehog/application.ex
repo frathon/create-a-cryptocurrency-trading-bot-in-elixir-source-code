@@ -21,7 +21,9 @@ defmodule Hedgehog.Application do
       Hedgehog.Exchange.BinanceMock,
       Hedgehog.Streamer.Binance.Supervisor,
       Hedgehog.Strategy.Naive.Supervisor,
-      Hedgehog.Data.Collector.CollectorSupervisor
+      Hedgehog.Data.Collector.CollectorSupervisor,
+      {DynamicSupervisor,
+       strategy: :one_for_one, name: Hedgehog.Data.Aggregator.DynamicWorkerSupervisor}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
