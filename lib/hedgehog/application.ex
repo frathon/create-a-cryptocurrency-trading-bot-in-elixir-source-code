@@ -20,7 +20,8 @@ defmodule Hedgehog.Application do
       HedgehogWeb.Endpoint,
       Hedgehog.Exchange.BinanceMock,
       Hedgehog.Streamer.Binance.Supervisor,
-      Hedgehog.Strategy.Naive.Supervisor
+      Hedgehog.Strategy.Naive.Supervisor,
+      Hedgehog.Data.Collector.CollectorSupervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
