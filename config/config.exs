@@ -37,7 +37,7 @@ config :hedgehog, HedgehogWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Hedgehog.PubSub,
-  live_view: [signing_salt: "NQNp55oR"]
+  live_view: [signing_salt: "MEmqEhTS"]
 
 # Configures the mailer
 #

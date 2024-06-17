@@ -17,7 +17,7 @@ config :hedgehog, Hedgehog.Repo,
 # you can enable the server option below.
 config :hedgehog, HedgehogWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "uiJKMWtlVbyIXwW+7pKw8JU266aaLCS22QAhV/V09VYAlgIHqAGh9os5M8sB4euw",
+  secret_key_base: "u4SnaEsjVxIWXlXbh0whcMGk5lclkvT8KKUd4qhcsil8aT+JMttDSnDHU6jTY4D1",
   server: false
 
 # In test we don't send emails.
@@ -31,3 +31,7 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :phoenix_live_view,
+  # Enable helpful, but potentially expensive runtime checks
+  enable_expensive_runtime_checks: true

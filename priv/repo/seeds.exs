@@ -58,5 +58,4 @@ maps =
   |> Enum.map(&%{base_settings | symbol: &1["symbol"]})
 
 {count, nil} = Repo.insert_all(NaiveStrategySettings, maps, on_conflict: :nothing)
-
-Logger.info("Inserted naive strategy settings for #{count} symbols")
+Logger.info("Inserted naive strategy settings for #{count} symbols")

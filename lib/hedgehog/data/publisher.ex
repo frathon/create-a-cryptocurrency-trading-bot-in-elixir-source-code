@@ -1,14 +1,14 @@
 defmodule Hedgehog.Data.Publisher do
   use Task
 
-  alias Hedgehog.Repo
-  alias Hedgehog.Exchange.TradeEvent
-
   import Ecto.Query, only: [from: 2]
 
   require Logger
 
-  def start_link(arg) do
+  alias Hedgehog.Repo
+  alias Hedgehog.Exchange.TradeEvent
+
+  def start(arg) do
     Task.start_link(__MODULE__, :run, [arg])
   end
 

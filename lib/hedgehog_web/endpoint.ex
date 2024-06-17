@@ -7,7 +7,7 @@ defmodule HedgehogWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_hedgehog_key",
-    signing_salt: "9/4xIpVm",
+    signing_salt: "vbX54FjG",
     same_site: "Lax"
   ]
 

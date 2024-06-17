@@ -9,7 +9,7 @@ defmodule Hedgehog.Strategy.Naive.FormulaTest do
   import ExUnit.CaptureLog
 
   @tag :unit
-  test "Strategy places a buy order" do
+  test "Formula places a buy order" do
     expected_order = %Binance.OrderResponse{
       client_order_id: "1",
       executed_qty: "0.000",

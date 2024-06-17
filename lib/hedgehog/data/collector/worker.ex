@@ -1,11 +1,11 @@
 defmodule Hedgehog.Data.Collector.Worker do
   use GenServer
 
+  require Logger
+
   alias Hedgehog.Exchange.Order
   alias Hedgehog.Exchange.TradeEvent
   alias Hedgehog.Repo
-
-  require Logger
 
   defmodule State do
     @enforce_keys [:topic]

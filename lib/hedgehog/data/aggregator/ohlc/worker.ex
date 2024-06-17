@@ -3,8 +3,8 @@ defmodule Hedgehog.Data.Aggregator.Ohlc.Worker do
 
   require Logger
 
-  alias Hedgehog.Exchange.TradeEvent
   alias Hedgehog.Data.Aggregator.Ohlc
+  alias Hedgehog.Exchange.TradeEvent
 
   def start_link(symbol) do
     GenServer.start_link(__MODULE__, symbol)
