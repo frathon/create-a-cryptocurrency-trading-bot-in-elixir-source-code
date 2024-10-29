@@ -2,10 +2,7 @@ import Config
 
 # Configure your database
 config :hedgehog, Hedgehog.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "hedgehog_dev",
+  database: "database.db",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
