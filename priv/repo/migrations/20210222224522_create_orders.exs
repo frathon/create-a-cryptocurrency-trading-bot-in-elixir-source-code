@@ -2,24 +2,26 @@ defmodule Hedgehog.Repo.Migrations.CreateOrders do
   use Ecto.Migration
 
   def change do
-    create table(:orders, primary_key: false) do
-      add(:order_id, :bigint, primary_key: true)
-      add(:client_order_id, :text)
-      add(:symbol, :text)
-      add(:price, :text)
-      add(:original_quantity, :text)
-      add(:executed_quantity, :text)
-      add(:cummulative_quote_quantity, :text)
-      add(:status, :text)
-      add(:time_in_force, :text)
-      add(:type, :text)
-      add(:side, :text)
-      add(:stop_price, :text)
-      add(:iceberg_quantity, :text)
-      add(:time, :bigint)
-      add(:update_time, :bigint)
-
-      timestamps()
-    end
+    execute("""
+    CREATE TABLE orders (
+      order_id BIGINT PRIMARY KEY,
+      client_order_id TEXT,
+      symbol TEXT,
+      price TEXT,
+      original_quantity TEXT,
+      executed_quantity TEXT,
+      cummulative_quote_quantity TEXT,
+      status TEXT,
+      time_in_force TEXT,
+      type TEXT,
+      side TEXT,
+      stop_price TEXT,
+      iceberg_quantity TEXT,
+      time BIGINT,
+      update_time BIGINT,
+      inserted_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+    """)
   end
 end

@@ -1,18 +1,16 @@
 defmodule Hedgehog.Repo.Migrations.CreateSubscriberSettings do
   use Ecto.Migration
 
-  alias Hedgehog.Data.Collector.SettingsStatusEnum
-
   def change do
-    SettingsStatusEnum.create_type()
-
-    create table(:collector_settings, primary_key: false) do
-      add(:id, :uuid, primary_key: true)
-      add(:topic, :text, null: false)
-      add(:status, SettingsStatusEnum.type(), default: "off", null: false)
-
-      timestamps()
-    end
+    execute("""
+    CREATE TABLE collector_settings (
+      id TEXT PRIMARY KEY,
+      topic TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'off' CHECK (status IN ('on', 'off')),
+      inserted_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+    """)
 
     create(unique_index(:collector_settings, [:topic]))
   end

@@ -1,24 +1,22 @@
 defmodule Hedgehog.Repo.Migrations.CreateNaiveStrategySettings do
   use Ecto.Migration
 
-  alias Hedgehog.Strategy.Naive.SettingsStatusEnum
-
   def change do
-    SettingsStatusEnum.create_type()
-
-    create table(:naive_strategy_settings, primary_key: false) do
-      add(:id, :uuid, primary_key: true)
-      add(:symbol, :text, null: false)
-      add(:chunks, :integer, null: false)
-      add(:budget, :decimal, null: false)
-      add(:buy_down_interval, :decimal, null: false)
-      add(:profit_interval, :decimal, null: false)
-      add(:rebuy_interval, :decimal, null: false)
-      add(:status, SettingsStatusEnum.type(), default: "off", null: false)
-
-      timestamps()
-    end
-
+    execute("""
+    CREATE TABLE naive_strategy_settings (
+      id TEXT PRIMARY KEY,
+      symbol TEXT NOT NULL,
+      chunks INTEGER NOT NULL,
+      budget DECIMAL NOT NULL,
+      buy_down_interval DECIMAL NOT NULL,
+      profit_interval DECIMAL NOT NULL,
+      rebuy_interval DECIMAL NOT NULL,
+      status TEXT NOT NULL DEFAULT 'off' CHECK (status IN ('on', 'off', 'shutdown')),
+      inserted_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+    """)
+  
     create(unique_index(:naive_strategy_settings, [:symbol]))
   end
 end
