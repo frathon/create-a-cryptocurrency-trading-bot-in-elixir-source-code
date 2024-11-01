@@ -35,6 +35,8 @@ hedgehog-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# SQLite database's files
+database.db
 database.db-shm
 database.db-wal
 
