@@ -35,3 +35,6 @@ hedgehog-*.tar
 npm-debug.log
 /assets/node_modules/
 
+database.db-shm
+database.db-wal
+
